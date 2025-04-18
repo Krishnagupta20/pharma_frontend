@@ -1,0 +1,71 @@
+/* src/LoginPage.css */
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+}
+
+.login-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin: 90px;
+}
+.image {
+  height: 50px;
+  width: 50px;
+
+  align-items: center;
+}
+.google {
+    /* width: 60px; */
+    height: 20px;
+    display: flex;
+    flex-direction: row;
+}
+#button1{
+    
+    background-color: aliceblue;
+    color: aliceblue;
+    width: 180px;
+}
+.p1{
+    width: 100px;
+    color: black;
+}
+.image12{
+width: 20px;
+height: 20px;
+}
+.login-image {
+  width: 350px;
+  height: 300px;
+  margin-top: 120px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 120px;
+  align-items: center;
+}
+
+.login-form input {
+  margin-bottom: 10px; /* Adjust spacing as needed */
+}
+
+.login-form button {
+  padding: 10px;
+  background-color: #007bff; /* Adjust color as needed */
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.login-form button:hover {
+  background-color: #0056b3; /* Adjust color as needed */
+}

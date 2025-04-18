@@ -1,0 +1,15 @@
+.xyz {
+  background-image: url("../assets/BottomImage.png");
+  width: auto;
+  height: 500px;
+  background-repeat: no-repeat;
+  margin-top: 25px;
+
+}
+
+.button{
+    margin-top: 320px;
+    margin-left: 140px;
+    border-radius: 15px;
+    border: 2px solid beige;
+}
