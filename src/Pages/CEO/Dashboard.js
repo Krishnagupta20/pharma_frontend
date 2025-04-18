@@ -12,6 +12,8 @@ import {
 import StatCard from "./Cards/StatCard";
 import axios from "axios";
 import ProductTable from "./ProductTable";
+const apiUrl = process.env.REACT_APP_API_URL;
+
 
 const CEODashboard = () => {
   const [stores, setStores] = useState([]);
@@ -34,7 +36,7 @@ const CEODashboard = () => {
         };
         if (selectedStore) {
           const productsResponse = await axios.get(
-            `http://localhost:8000/stores/${selectedStore}/`,
+            `${apiUrl}/stores/${selectedStore}/`,
             config
           );
           setProducts(productsResponse.data[0].products);
@@ -57,7 +59,7 @@ const CEODashboard = () => {
             Authorization: `Bearer ${accessToken}`,
           },
         };
-        const response = await axios.get("http://localhost:8000/stores/", config);
+        const response = await axios.get(`${apiUrl}/stores/`, config);
         setStores(response.data);
         if (response.data.length > 0) {
           setSelectedStore(response.data[0].id);

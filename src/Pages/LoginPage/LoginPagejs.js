@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import image from "../../assets/photo1.png";
 import gimage from "../../assets/googleIcon.png";
 import axios from "axios";
+const apiUrl = process.env.REACT_APP_API_URL;
 
 export default function LoginPagejs() {
   const [username, setUsername] = useState("");
@@ -34,7 +35,7 @@ export default function LoginPagejs() {
     };
 
     try {
-      const { data } = await axios.post("http://localhost:8000/accounts/login/", user, {
+      const { data } = await axios.post(`${apiUrl}/accounts/login/`, user, {
         headers: { "Content-Type": "application/json" },
         withCredentials: true,
       });

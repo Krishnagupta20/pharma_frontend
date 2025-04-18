@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { Text, Card, CardBody, HStack, Box, Button } from "@chakra-ui/react";
 import StoreCard from "./Cards/StoreCard";
+const apiUrl = process.env.REACT_APP_API_URL;
+
 
 const ManageStore = () => {
   const [stores, setStores] = useState([]);
@@ -9,7 +11,7 @@ const ManageStore = () => {
     const fetchStores = async () => {
       try {
         const accessToken = localStorage.getItem("access_token");
-        const response = await fetch("http://localhost:8000/stores/", {
+        const response = await fetch(`${apiUrl}//stores/`, {
           headers: {
             Authorization: `Bearer ${accessToken}`,
           },

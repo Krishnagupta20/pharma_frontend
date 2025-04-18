@@ -6,6 +6,8 @@ import Foot from "../../components/Foot";
 import Card from "../../components/Card";
 import Ads from "../../components/Ads/Ads";
 import axios from 'axios';
+const apiUrl = process.env.REACT_APP_API_URL;
+
 
 export default function Dashboard() {
   const [products, setProducts] = useState([]);
@@ -30,7 +32,7 @@ export default function Dashboard() {
     const fetchProducts = async () => {
       try {
         if (latitude !== null && longitude !== null) {
-          const response = await axios.get(`http://localhost:8000/products/?latitude=${latitude}&longitude=${longitude}`);
+          const response = await axios.get(`${apiUrl}/products/?latitude=${latitude}&longitude=${longitude}`);
           setProducts(response.data);
         }
       } catch (error) {
@@ -43,7 +45,7 @@ export default function Dashboard() {
 
   const handleSearch = async (query) => {
     try {
-      const response = await axios.get(`http://localhost:8000/products/search?query=${query}`);
+      const response = await axios.get(`${apiUrl}/products/search?query=${query}`);
       setProducts(response.data);
     } catch (error) {
       console.error('Error searching for products:', error);

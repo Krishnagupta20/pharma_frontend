@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "./SearchBar.css";
 import sicon from "../assets/searchIcon.png";
 import axios from "axios";
+const apiUrl = process.env.REACT_APP_API_URL;
+
 
 const SearchBar = ({ onSearch }) => {
   const [query, setQuery] = useState("");
@@ -14,7 +16,7 @@ const SearchBar = ({ onSearch }) => {
     event.preventDefault();
 
     try {
-      const response = await axios.get(`http://localhost:8000/products/search?query=${query}`);
+      const response = await axios.get(`${apiUrl}/products/search?query=${query}`);
       onSearch(response.data);
     } catch (error) {
       console.error("Error searching for products:", error);

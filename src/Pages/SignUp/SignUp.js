@@ -11,6 +11,7 @@ export default function SignUp() {
   const [address, setAddress] = useState("");
   const [pinCode, setPinCode] = useState("");
   const [phone, setPhone] = useState("");
+  const apiUrl = process.env.REACT_APP_API_URL;
 
   const signupndata = {
     name: name,
@@ -25,7 +26,7 @@ export default function SignUp() {
     e.preventDefault();
     try {
       const response = await fetch(
-        "http://localhost:8000/accounts/register/",
+        `${apiUrl}/accounts/register/`,
         {
           method: "POST",
           headers: {
